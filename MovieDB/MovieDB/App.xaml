@@ -3,6 +3,31 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MovieDB.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <!--#region Colors-->
+            <Color x:Key="PurpleLight">#974BF0</Color>
+            <Color x:Key="PurpleDark">#7107CC</Color>
+            <Color x:Key="BgDark">#1A1A1A</Color>
+            <!--#endregion Colors-->
+        
+            <!--#region Styles-->
+            <Style x:Key="RobotoBase" TargetType="Label">
+                <Setter Property="FontFamily" Value="RobotoFont" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
+            <Style x:Key="RiftBase" TargetType="Label">
+                <Setter Property="FontFamily" Value="RiftFont" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
 
+            <Style x:Key="Roboto14" BasedOn="{StaticResource RobotoBase}" TargetType="Label">
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+
+            <Style x:Key="Rift28" BasedOn="{StaticResource RiftBase}" TargetType="Label">
+                <Setter Property="FontSize" Value="28" />
+            </Style>
+            <!--#endregion Styles-->
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

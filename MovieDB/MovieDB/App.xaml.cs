@@ -2,6 +2,8 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+[assembly: ExportFont("Rift_Demi_Italic.otf", Alias = "RiftFont")]
+[assembly: ExportFont("Roboto_Medium.ttf", Alias = "RobotoFont")]
 namespace MovieDB
 {
     public partial class App : Application
@@ -10,7 +12,7 @@ namespace MovieDB
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Views.MainPage();
         }
 
         protected override void OnStart ()

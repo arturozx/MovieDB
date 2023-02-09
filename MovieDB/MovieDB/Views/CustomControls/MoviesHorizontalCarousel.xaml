@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MovieDB.Views.CustomControls.MoviesHorizontalCarousel">
+
+    <StackLayout
+        Spacing="8">
+        <Label
+            Text="title"
+            Margin="34,0,0,0"
+            Style="{StaticResource Roboto14}"/>
+        <CollectionView
+            HeightRequest="252">
+            
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                <x:String>mono</x:String>
+                <x:String>monodroid</x:String>
+                <x:String>monotouch</x:String>
+                <x:String>monotouch</x:String>
+                <x:String>monotouch</x:String>
+                <x:String>monotouch</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="20"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame
+                        HasShadow="False"
+                        HeightRequest="252" 
+                        Padding="0"
+                        WidthRequest="170"
+                        CornerRadius="16"
+                        IsClippedToBounds="True"
+                        BorderColor="{StaticResource PurpleLight}">
+                        <Image
+                            Aspect="AspectFill"
+                            Source="https://image.tmdb.org/t/p/w500/t79ozwWnwekO0ADIzsFP1E5SkvR.jpg"/>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    
+    </StackLayout>
+
+</ContentView>
+

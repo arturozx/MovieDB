@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+
+             xmlns:localControls="clr-namespace:MovieDB.Views.CustomControls"
+
+             x:Class="MovieDB.Views.MainPage">
+
+    <Grid
+        RowDefinitions="Auto,*"
+        RowSpacing="0"
+        BackgroundColor="Black">
+
+        <!--HACK: Title should be drawn after collectionview to keep the header space on android.
+                android has problems drawing Header in the collectionview
+                this can be fixed with a custom renderer, if there is time -->
+
+        <!--#region ListPerGenre-->
+        <CollectionView
+            Grid.Row="1"
+            Margin="{x:OnPlatform Android='0,-40,0,0', iOS='0'}" 
+            VerticalOptions="FillAndExpand">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                <x:String>mono</x:String>
+                <x:String>monodroid</x:String>
+                <x:String>monotouch</x:String>
+                <x:String>monotouch</x:String>
+                <x:String>monotouch</x:String>
+                <x:String>monotouch</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="34"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <localControls:MoviesHorizontalCarousel />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            <CollectionView.Header>
+                <BoxView
+                    HeightRequest="{x:OnPlatform Android='1', iOS='17'}" 
+                    Color="Transparent"/>
+            </CollectionView.Header>
+            <CollectionView.Footer>
+                <BoxView
+                    HeightRequest="{x:OnPlatform Android='50', iOS='85'}" 
+                    Color="Transparent"/>
+            </CollectionView.Footer>
+        </CollectionView>
+        <!--#endregion ListPerGenre-->
+
+        <!--#region Title-->
+        <Frame 
+            Grid.Row="0"
+            BackgroundColor="{StaticResource BgDark}" 
+            Padding="{x:OnPlatform Android='0,44,0,0', iOS='0,88,0,0'}" 
+            HasShadow="False"
+            CornerRadius="0">
+            <Label 
+                VerticalOptions="End"
+                HorizontalOptions="Center"
+                TextColor="{StaticResource PurpleDark}" 
+                Style="{StaticResource Rift28}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span
+                            Text="MOVIE "
+                            TextColor="{StaticResource PurpleLight}"/>
+                        <Span
+                            Text="TIME"
+                            TextColor="{StaticResource PurpleDark}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </Frame>
+        <!--#endregion Title-->
+    </Grid>
+
+</ContentPage>
+

@@ -14,4 +14,22 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\" />
+    <None Remove="Resources\Fonts\" />
+    <None Remove="Resources\Fonts\Rift_Demi_Italic.otf" />
+    <None Remove="Resources\Fonts\Roboto_Medium.ttf" />
+    <None Remove="Views\" />
+    <None Remove="Views\CustomControls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\Fonts\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\CustomControls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\Rift_Demi_Italic.otf" />
+    <EmbeddedResource Include="Resources\Fonts\Roboto_Medium.ttf" />
+  </ItemGroup>
 </Project>
