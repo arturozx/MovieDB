@@ -19,17 +19,8 @@
         <CollectionView
             Grid.Row="1"
             Margin="{x:OnPlatform Android='0,-40,0,0', iOS='0'}" 
+            ItemsSource="{Binding Movies}"
             VerticalOptions="FillAndExpand">
-            <CollectionView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                <x:String>mono</x:String>
-                <x:String>monodroid</x:String>
-                <x:String>monotouch</x:String>
-                <x:String>monotouch</x:String>
-                <x:String>monotouch</x:String>
-                <x:String>monotouch</x:String>
-                </x:Array>
-            </CollectionView.ItemsSource>
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical" ItemSpacing="34"/>
             </CollectionView.ItemsLayout>
