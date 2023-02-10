@@ -8,6 +8,7 @@
             <Color x:Key="PurpleLight">#974BF0</Color>
             <Color x:Key="PurpleDark">#7107CC</Color>
             <Color x:Key="BgDark">#1A1A1A</Color>
+            <Color x:Key="Gray">#A5A5A5</Color>
             <!--#endregion Colors-->
         
             <!--#region Styles-->
@@ -19,6 +20,10 @@
                 <Setter Property="FontFamily" Value="RiftFont" />
                 <Setter Property="TextColor" Value="White" />
             </Style>
+            <Style x:Key="GothamBase" TargetType="Label">
+                <Setter Property="FontFamily" Value="GothamFont" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
 
             <Style x:Key="Roboto14" BasedOn="{StaticResource RobotoBase}" TargetType="Label">
                 <Setter Property="FontSize" Value="14" />
@@ -26,6 +31,18 @@
 
             <Style x:Key="Rift28" BasedOn="{StaticResource RiftBase}" TargetType="Label">
                 <Setter Property="FontSize" Value="28" />
+            </Style>
+
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BorderColor" Value="{StaticResource PurpleDark}" />
+                <Setter Property="CornerRadius" Value="16" />
+                <Setter Property="BorderWidth" Value="3" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontFamily" Value="GothamFont" />
+                <Setter Property="HeightRequest" Value="44" />
+                <Setter Property="WidthRequest" Value="165" />
+                <Setter Property="VerticalOptions" Value="Start" />
             </Style>
             <!--#endregion Styles-->
         </ResourceDictionary>

@@ -115,6 +115,9 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Assets.xcassets\im_close.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />

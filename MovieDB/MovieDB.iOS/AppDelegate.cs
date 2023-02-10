@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Sharpnado.MaterialFrame.iOS;
 using UIKit;
 
 namespace MovieDB.iOS
@@ -22,9 +23,13 @@ namespace MovieDB.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            iOSMaterialFrameRenderer.Init();
+            Rg.Plugins.Popup.Popup.Init();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();      
 
             global::Xamarin.Forms.Forms.Init();
+
+            Sharpnado.MaterialFrame.Initializer.Initialize(loggerEnable: false, false);
 
             LoadApplication(new App());
 

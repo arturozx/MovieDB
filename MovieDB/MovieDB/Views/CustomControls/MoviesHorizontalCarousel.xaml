@@ -43,14 +43,8 @@
                             IsClippedToBounds="True">
                             <ffimageloading:CachedImage
                                 BackgroundColor="{StaticResource BgDark}"
+                                Source="{Binding PosterPath, Converter={converters:PosterConverter}}"
                                 Aspect="AspectFill">
-                                <ffimageloading:CachedImage.Source>
-                                    <Binding Path="PosterPath">
-                                        <Binding.Converter>
-                                            <converters:PosterConverter/>
-                                        </Binding.Converter>
-                                    </Binding>
-                                </ffimageloading:CachedImage.Source>
                             </ffimageloading:CachedImage>
                             <Frame.GestureRecognizers>
                                 <TapGestureRecognizer

@@ -55,6 +55,20 @@ namespace MovieDB.Services
 
             return null;
         }
+
+        public async Task<List<Movie>> GetPopularMovies()
+        {
+            Uri uri = new Uri(string.Format(MOVIES_URL, "/movie/popular", API_KEY, string.Empty));
+            HttpResponseMessage response = await this._client.GetAsync(uri);
+            if (response.IsSuccessStatusCode)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<Movies>(content);
+                return result.MoviesList;
+            }
+
+            return null;
+        }
         #endregion
     }
 }

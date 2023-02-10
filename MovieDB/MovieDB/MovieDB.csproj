@@ -19,6 +19,11 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
+    <PackageReference Include="Sharpnado.MaterialFrame" Version="1.3.0" />
+    <PackageReference Include="SkiaSharp" Version="2.88.3" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.88.3" />
+    <PackageReference Include="Svg.Skia" Version="0.5.18" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Resources\" />
@@ -34,6 +39,15 @@
     <None Remove="Views\Converters\" />
     <None Remove="Xamarin.FFImageLoading.Forms" />
     <None Remove="Xamarin.FFImageLoading.Transformations" />
+    <None Remove="Rg.Plugins.Popup" />
+    <None Remove="Sharpnado.MaterialFrame" />
+    <None Remove="Resources\Fonts\Gotham_Medium.otf" />
+    <None Remove="SkiaSharp" />
+    <None Remove="SkiaSharp.Views.Forms" />
+    <None Remove="Svg.Skia" />
+    <None Remove="Resources\Assets\ic_close.svg" />
+    <None Remove="Resources\Assets\ic_star_empty.svg" />
+    <None Remove="Resources\Assets\ic_star_full.svg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -48,5 +62,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\Fonts\Rift_Demi_Italic.otf" />
     <EmbeddedResource Include="Resources\Fonts\Roboto_Medium.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Gotham_Medium.otf" />
+    <EmbeddedResource Include="Resources\Assets\ic_close.svg" />
+    <EmbeddedResource Include="Resources\Assets\ic_star_empty.svg" />
+    <EmbeddedResource Include="Resources\Assets\ic_star_full.svg" />
   </ItemGroup>
 </Project>

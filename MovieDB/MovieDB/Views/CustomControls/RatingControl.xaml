@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+
+    xmlns:controls="clr-namespace:MovieDB.Views.CustomControls"
+
+    x:Class="MovieDB.Views.CustomControls.RatingControl">
+    <Grid
+        ColumnDefinitions="30,30,30,30,30"
+        ColumnSpacing="0"
+        HeightRequest="30"
+        WidthRequest="150">
+
+        <!--#region EmptyStars-->
+        <controls:SvgImageControl
+            Grid.Column="0"
+            Source="ic_star_empty.svg"/>
+        <controls:SvgImageControl
+            Grid.Column="1"
+            Source="ic_star_empty.svg"/>
+        <controls:SvgImageControl
+            Grid.Column="2"
+            Source="ic_star_empty.svg"/>
+        <controls:SvgImageControl
+            Grid.Column="3"
+            Source="ic_star_empty.svg"/>
+        <controls:SvgImageControl
+            Grid.Column="4"
+            Source="ic_star_empty.svg"/>
+        <!--#endregion EmptyStars-->
+
+        <!--#region FullStart-->
+        <controls:SvgImageControl
+            x:Name="VwStar1"
+            Grid.Column="0"
+            IsVisible="false"
+            Source="ic_star_full.svg"/>
+        <controls:SvgImageControl
+            x:Name="VwStar2"
+            Grid.Column="1"
+            IsVisible="false"
+            Source="ic_star_full.svg"/>
+        <controls:SvgImageControl
+            x:Name="VwStar3"
+            Grid.Column="2"
+            IsVisible="false"
+            Source="ic_star_full.svg"/>
+        <controls:SvgImageControl
+            x:Name="VwStar4"
+            Grid.Column="3"
+            IsVisible="false"
+            Source="ic_star_full.svg"/>
+        <controls:SvgImageControl
+            x:Name="VwStar5"
+            Grid.Column="4"
+            IsVisible="false"
+            Source="ic_star_full.svg"/>
+        <!--#endregion FullStart-->
+    </Grid>
+</ContentView>
+

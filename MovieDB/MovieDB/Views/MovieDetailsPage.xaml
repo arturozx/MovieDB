@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<pages:PopupPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:rv="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:converters="clr-namespace:MovieDB.Views.Converters"
+    xmlns:controls="clr-namespace:MovieDB.Views.CustomControls"
+
+    x:Class="MovieDB.Views.MovieDetailsPage"
+    
+    BackgroundColor="Transparent"
+    x:Name="this">
+
+    <Grid
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        Margin="8,0">
+        <rv:MaterialFrame
+            MaterialTheme="AcrylicBlur"
+            MaterialBlurStyle="Dark"
+            HasShadow="False"
+            Margin="4"
+            CornerRadius="16"
+            Padding="0">
+
+            <Grid
+                RowDefinitions="380,Auto,Auto,30,Auto,Auto,Auto"
+                RowSpacing="0"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"
+                Padding="14,16">
+
+                <!--I reduce the original size of the image to fit better in devices with smaller screen-->
+                <!--#region BigImage-->
+                <Frame
+                    Grid.Row="0"
+                    Padding="0"
+                    HasShadow="False"
+                    HorizontalOptions="Center"
+                    IsClippedToBounds="True"
+                    CornerRadius="16"
+                    BackgroundColor="Blue"
+                    HeightRequest="380"
+                    WidthRequest="256">
+                    <ffimageloading:CachedImage
+                        Aspect="AspectFill"
+                        Source="{Binding PosterPath, Converter={converters:PosterConverter ImageWith='400'}}"/>
+                </Frame>
+                <!--#endregion BigImage-->
+
+                <!--#region MovieTitle-->
+                <Label
+                    Grid.Row="1"
+                    Text="{Binding Title}"
+                    Style="{StaticResource RobotoBase}"
+                    Margin="0,12,0,8"
+                    FontSize="28"
+                    LineBreakMode="TailTruncation"/>
+                <!--#endregion MovieTitle-->
+
+                <!--#region ReleaseDate-->
+                <Label
+                    Grid.Row="2"
+                    LineBreakMode="TailTruncation"
+                    FontSize="16"
+                    Style="{StaticResource RobotoBase}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span
+                                Text="Released: "
+                                TextColor="{StaticResource Gray}"/>
+                            <Span
+                                Text="{Binding ReleseDate}"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <!--#endregion ReleaseDate-->
+
+                <!--#region Stars-->
+                <controls:RatingControl
+                    Grid.Row="3"
+                    Margin="0,8,0,2"
+                    Rating="{Binding VoteAverage}"/>
+                <!--#endregion Stars-->
+
+                <!--#region Ratings-->
+                <Label
+                    Grid.Row="4"
+                    TextColor="{StaticResource PurpleDark}"
+                    Style="{StaticResource Roboto14}">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span
+                                Text="{Binding VoteCount}"/>
+                            <Span
+                                Text=" ratings"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <!--#endregion Ratings-->
+
+                <!--#region Overview-->
+                <Label
+                    Grid.Row="5"
+                    Margin="0,12,0,27"
+                    Text="{Binding Overview}"
+                    Style="{StaticResource Roboto14}"/>
+                <!--#endregion Overview-->
+
+                <!--#region Buttons-->
+                <Button
+                    Grid.Row="6"
+                    HorizontalOptions="Start"
+                    Text="Back"
+                    BackgroundColor="Transparent"
+                    Command="{Binding Parent.BindingContext.CloseCommand, Source={x:Reference this}}"
+                    Style="{StaticResource ButtonStyle}"/>
+
+                <Button
+                    Grid.Row="6"
+                    HorizontalOptions="End"
+                    Text="View Trailer"
+                    BackgroundColor="{StaticResource PurpleDark}"
+                    Command="{Binding Parent.BindingContext.CloseCommand, Source={x:Reference this}}"
+                    Style="{StaticResource ButtonStyle}"/>
+                <!--#endregion Buttons-->
+
+            </Grid>
+        </rv:MaterialFrame>
+
+        <!--#region CloseButton-->
+        <controls:SvgImageControl
+            Margin="0,0,0,0"
+            BackgroundColor="{StaticResource PurpleDark}"
+            CornerRadius="11"
+            HorizontalOptions="End"
+            VerticalOptions="Start"
+            Source="ic_close.svg"
+            HeightRequest="24"
+            WidthRequest="24">
+            <controls:SvgImageControl.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding Parent.BindingContext.CloseCommand, Source={x:Reference this}}"/>
+            </controls:SvgImageControl.GestureRecognizers>
+        </controls:SvgImageControl>
+        <!--#endregion CloseButton-->
+    </Grid>
+</pages:PopupPage>
+

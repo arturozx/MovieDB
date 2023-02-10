@@ -16,8 +16,12 @@
                 this can be fixed with a custom renderer, if there is time -->
 
         <!--#region ListPerGenre-->
-        <CollectionView
+        <RefreshView
             Grid.Row="1"
+            IsRefreshing="{Binding IsRefreshing, Mode=OneWay}"
+            RefreshColor="{StaticResource PurpleLight}"
+            Command="{Binding RefreshCommand}">
+        <CollectionView
             Margin="{x:OnPlatform Android='0,-40,0,0', iOS='0'}" 
             ItemsSource="{Binding Movies}"
             VerticalOptions="FillAndExpand">
@@ -40,6 +44,7 @@
                     Color="Transparent"/>
             </CollectionView.Footer>
         </CollectionView>
+        </RefreshView>
         <!--#endregion ListPerGenre-->
 
         <!--#region Title-->

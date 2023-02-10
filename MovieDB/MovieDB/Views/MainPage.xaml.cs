@@ -1,6 +1,7 @@
 ﻿using Xamarin.Forms;
 
 using MovieDB.ViewModels;
+using Rg.Plugins.Popup.Services;
 
 namespace MovieDB.Views
 {
@@ -10,7 +11,14 @@ namespace MovieDB.Views
         {
             InitializeComponent();
 
-            this.BindingContext = new MoviesViewModel();
+            var vm = new MoviesViewModel();
+            //this navigation is ugly but no time to create a NavigationService layer
+            vm.NavToMovieDetails = (movie) => {
+                var movieDetailsPage = new MovieDetailsPage();
+                movieDetailsPage.BindingContext = movie;
+                PopupNavigation.Instance.PushAsync(movieDetailsPage);
+             };
+            this.BindingContext = vm;
         }
     }
 }
